@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,25 +45,25 @@
         <header>
             <h1>🧺 Wash Monitor</h1>
             <div class="controls">
-                <input type="number" id="limitInput" value="50" min="1" max="500" placeholder="Registos">
-                <button id="refreshBtn">Atualizar</button>
+                <input type="number" id="limitInput" value="50" min="1" max="500" placeholder="Records">
+                <button id="refreshBtn">Refresh</button>
             </div>
         </header>
 
         <!-- CURRENT CYCLE -->
         <div class="current-cycle" id="currentCycle">
-            <h3>🔄 Ciclo Atual</h3>
+            <h3>🔄 Current Cycle</h3>
             <div class="cycle-info">
                 <div>
-                    <div class="stat-label">Iniciado</div>
+                    <div class="stat-label">Started</div>
                     <div class="stat-value" id="cycleStartTime">-</div>
                 </div>
                 <div>
-                    <div class="stat-label">Duração</div>
+                    <div class="stat-label">Duration</div>
                     <div class="stat-value" id="cycleDuration">-</div>
                 </div>
                 <div>
-                    <div class="stat-label">Potência Início</div>
+                    <div class="stat-label">Start Power</div>
                     <div class="stat-value" id="cycleStartPower">-</div>
                 </div>
             </div>
@@ -71,102 +71,101 @@
 
         <!-- GLOBAL (ALL TIME) SECTION -->
         <div class="stats stat-section" id="statsGlobal">
-            <h3>📊 Global (Todo o Tempo)</h3>
+            <h3>📊 Global (All Time)</h3>
             <div class="stat-card">
-                <div class="stat-label">Ciclos Completados</div>
+                <div class="stat-label">Cycles Completed</div>
                 <div class="stat-value" id="cyclesGlobal">-</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Tempo Total de Lavagem</div>
+                <div class="stat-label">Total Wash Time</div>
                 <div class="stat-value" id="runningTimeGlobal">-</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Tempo Médio por Ciclo</div>
+                <div class="stat-label">Avg Cycle Time</div>
                 <div class="stat-value" id="avgRunningGlobal">-</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Ciclo Mais Longo</div>
+                <div class="stat-label">Longest Cycle</div>
                 <div class="stat-value" id="maxRunningGlobal">-</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Ciclo Mais Curto</div>
+                <div class="stat-label">Shortest Cycle</div>
                 <div class="stat-value" id="minRunningGlobal">-</div>
             </div>
         </div>
 
         <!-- THIS WEEK SECTION -->
         <div class="stats stat-section" id="statsThisWeek">
-            <h3>📅 Esta Semana</h3>
+            <h3>📅 This Week</h3>
             <div class="stat-card">
-                <div class="stat-label">Ciclos Completados</div>
+                <div class="stat-label">Cycles Completed</div>
                 <div class="stat-value" id="cyclesThisWeek">-</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Tempo Total de Lavagem</div>
+                <div class="stat-label">Total Wash Time</div>
                 <div class="stat-value" id="runningTimeThisWeek">-</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Tempo Médio por Ciclo</div>
+                <div class="stat-label">Avg Cycle Time</div>
                 <div class="stat-value" id="avgRunningThisWeek">-</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Ciclo Mais Longo</div>
+                <div class="stat-label">Longest Cycle</div>
                 <div class="stat-value" id="maxRunningThisWeek">-</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Ciclo Mais Curto</div>
+                <div class="stat-label">Shortest Cycle</div>
                 <div class="stat-value" id="minRunningThisWeek">-</div>
             </div>
         </div>
 
         <!-- LAST WEEK SECTION -->
         <div class="stats stat-section" id="statsLastWeek">
-            <h3>📅 Semana Passada</h3>
+            <h3>📅 Last Week</h3>
             <div class="stat-card">
-                <div class="stat-label">Ciclos Completados</div>
+                <div class="stat-label">Cycles Completed</div>
                 <div class="stat-value" id="cyclesLastWeek">-</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Tempo Total de Lavagem</div>
+                <div class="stat-label">Total Wash Time</div>
                 <div class="stat-value" id="runningTimeLastWeek">-</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Tempo Médio por Ciclo</div>
+                <div class="stat-label">Avg Cycle Time</div>
                 <div class="stat-value" id="avgRunningLastWeek">-</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Ciclo Mais Longo</div>
+                <div class="stat-label">Longest Cycle</div>
                 <div class="stat-value" id="maxRunningLastWeek">-</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Ciclo Mais Curto</div>
+                <div class="stat-label">Shortest Cycle</div>
                 <div class="stat-value" id="minRunningLastWeek">-</div>
             </div>
         </div>
 
         <!-- LAST EVENT -->
         <div class="last-event-row">
-            <div class="stat-label">Último Evento</div>
+            <div class="stat-label">Last Event</div>
             <div class="stat-value" id="lastEvent">-</div>
         </div>
 
         <div id="error" class="error" style="display:none;"></div>
-        <div id="loading" class="loading" style="display:none;">A carregar...</div>
+        <div id="loading" class="loading" style="display:none;">Loading...</div>
 
         <table id="eventsTable" style="display:none;">
             <thead>
                 <tr>
-                    <th>Evento</th>
-                    <th>Data e Hora</th>
-                    <th>Duração</th>
-                    <th>Potência (W)</th>
-                    <th>IP Origem</th>
+                    <th>Event</th>
+                    <th>Date & Time</th>
+                    <th>Duration</th>
+                    <th>Source IP</th>
                 </tr>
             </thead>
             <tbody id="eventsBody"></tbody>
         </table>
 
-        <div id="emptyMsg" class="empty" style="display:none;">Nenhum evento encontrado</div>
+        <div id="emptyMsg" class="empty" style="display:none;">No events found</div>
     </div>
 
     <script>
@@ -207,7 +206,7 @@
                 const events = await response.json();
                 renderEvents(events);
             } catch (err) {
-                errorDiv.textContent = 'Erro ao carregar eventos: ' + err.message;
+                errorDiv.textContent = 'Error loading events: ' + err.message;
                 errorDiv.style.display = 'block';
             } finally {
                 loading.style.display = 'none';
@@ -385,8 +384,7 @@
                     <td class="${rowClass}">${ev.event.toUpperCase()}</td>
                     <td>${formatDateTimePT(ev.ts)}</td>
                     <td class="duration">-</td>
-                    <td>${ev.power_watts !== null && ev.power_watts !== undefined ? ev.power_watts : '-'}</td>
-                    <td>${ev.source_ip || 'desconhecido'}</td>
+                    <td>${ev.source_ip || 'unknown'}</td>
                 </tr>`;
             }).join('');
 
